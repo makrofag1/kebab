@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo Kebab Nasz">
+  <defs>
+    <path id="arcTop" d="M 38 100 A 62 62 0 0 1 162 100"/>
+    <path id="arcBottom" d="M 30 100 A 70 70 0 0 0 170 100"/>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#111"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#F5C518" stroke-width="5"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#F5C518" stroke-width="1.5" opacity=".6"/>
+  <text font-family="Bebas Neue, Oswald, Impact, sans-serif" font-size="30" fill="#F5C518" letter-spacing="6" text-anchor="middle">
+    <textPath href="#arcTop" startOffset="50%">KEBAB</textPath>
+  </text>
+  <text font-family="Bebas Neue, Oswald, Impact, sans-serif" font-size="30" fill="#F5C518" letter-spacing="6" text-anchor="middle" dominant-baseline="hanging">
+    <textPath href="#arcBottom" startOffset="50%">NASZ</textPath>
+  </text>
+  <path d="M68 78 L132 78 L132 112 Q132 130 100 140 Q68 130 68 112 Z" fill="#D7261E" stroke="#F5C518" stroke-width="3"/>
+  <text x="100" y="118" font-family="Bebas Neue, Oswald, Impact, sans-serif" font-size="40" font-weight="700" fill="#F5C518" text-anchor="middle">KN</text>
+  <circle cx="44" cy="100" r="3" fill="#F5C518"/>
+  <circle cx="156" cy="100" r="3" fill="#F5C518"/>
+</svg>

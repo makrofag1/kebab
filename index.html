@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kebab Nasz Mrozy – kebab, rollo, kapsalon, kebab box | Kilińskiego 3</title>
+  <meta name="description" content="Kebab Nasz w Mrozach – kebab w picie, rollo, tortilla, bułka, kebab box, kapsalon i talerz. Kurczak i wołowina. Otwarte codziennie 10:00–23:30. Zamów: 739 506 184.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Kebab Nasz – Mrozy">
+  <meta property="og:description" content="Kebab, rollo, kapsalon i kebab box w Mrozach. Codziennie 10:00–23:30. Tel. 739 506 184.">
+  <meta property="og:image" content="images/menu-ulotka.webp">
+  <meta property="og:locale" content="pl_PL">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Kebab Nasz",
+    "image": "images/menu-ulotka.webp",
+    "telephone": "+48 739 506 184",
+    "servesCuisine": ["Kebab", "Turecka", "Fast food"],
+    "priceRange": "15–45 zł",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kilińskiego 3",
+      "postalCode": "05-320",
+      "addressLocality": "Mrozy",
+      "addressCountry": "PL"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 52.1650062, "longitude": 21.802499 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "10:00",
+      "closes": "23:30"
+    }],
+    "hasMenu": "#menu"
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#menu">Przejdź do menu</a>
+
+  <!-- NAWIGACJA -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Kebab Nasz – strona główna">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span>Kebab <b>Nasz</b></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Główna nawigacja">
+        <a href="#menu">Menu</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#godziny">Godziny</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn btn--primary btn--sm nav__call" href="tel:+48739506184">📞 <span>739 506 184</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="status" id="openStatus"><span class="status__dot"></span><span class="status__label">Sprawdzam godziny…</span></p>
+          <h1 class="hero__title">Kebab<br><span>Nasz</span></h1>
+          <p class="hero__lead">Soczysty kurczak i wołowina, świeże surówki, sosy i porcje, po których nie wyjdziesz głodny. Twój kebab w Mrozach.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg" href="tel:+48739506184">📞 Zadzwoń i zamów</a>
+            <a class="btn btn--ghost btn--lg" href="#menu">Zobacz menu</a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong>10–23:30</strong><span>codziennie</span></li>
+            <li><strong>od 15 zł</strong><span>za kebab</span></li>
+          </ul>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__plate">
+            <img src="images/logo.svg" alt="" class="hero__logo">
+          </div>
+          <span class="chip chip--1">🥙 Pita</span>
+          <span class="chip chip--2">🌯 Tortilla</span>
+          <span class="chip chip--3">🍟 Kebab Box</span>
+          <span class="chip chip--4">🧀 Kapsalon</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Nasze menu</p>
+          <h2 class="section__title">Wybierz swojego kebaba</h2>
+          <p class="section__sub">Mięso do wyboru: <b>kurczak</b> lub <b>wołowina</b>. Ceny w złotych.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Kategorie menu" id="menuTabs"></div>
+        <div class="menu__grid" id="menuGrid"></div>
+
+        <div class="menu__footer">
+          <button class="btn btn--ghost" id="flyerBtn" type="button">📄 Zobacz ulotkę z menu</button>
+          <a class="btn btn--primary" href="tel:+48739506184">📞 Zamów: 739 506 184</a>
+          <a class="btn btn--ghost" id="orderOnline" href="#" target="_blank" rel="noopener" hidden>🛵 Zamów online</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- O NAS -->
+    <section class="section about" id="o-nas">
+      <div class="container about__inner">
+        <div class="about__text">
+          <p class="eyebrow">O nas</p>
+          <h2 class="section__title">Kebab, który jest <span class="hl">nasz</span></h2>
+          <p>Kebab Nasz to lokal przy ul. Kilińskiego 3 w Mrozach. Robimy kebaby tak, jak sami lubimy je jeść: dużo mięsa, świeże surówki, gorące frytki i porządna porcja sosu.</p>
+          <p>Wpadnij na szybki obiad, zabierz box na wynos albo zadzwoń wcześniej – przygotujemy zamówienie, zanim dojedziesz.</p>
+        </div>
+        <ul class="features">
+          <li class="feature"><span class="feature__icon">🔥</span><h3>Kurczak lub wołowina</h3><p>Wybierasz mięso do każdego kebaba.</p></li>
+          <li class="feature"><span class="feature__icon">💪</span><h3>Duże porcje</h3><p>Od małego rollo po Dürüm XXL 50 cm.</p></li>
+          <li class="feature"><span class="feature__icon">🥙</span><h3>Wybór formy</h3><p>Pita, tortilla, bułka, box, kapsalon lub talerz.</p></li>
+          <li class="feature"><span class="feature__icon">⏰</span><h3>Do późna</h3><p>Codziennie do 23:30, także w weekend.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GODZINY + KONTAKT -->
+    <section class="section contact" id="godziny">
+      <div class="container contact__inner">
+        <div class="card hours">
+          <p class="eyebrow">Godziny otwarcia</p>
+          <h2 class="section__title section__title--sm">Zapraszamy codziennie</h2>
+          <table class="hours__table" id="hoursTable">
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="card contact__card" id="kontakt">
+          <p class="eyebrow">Kontakt i dojazd</p>
+          <h2 class="section__title section__title--sm">Znajdziesz nas tutaj</h2>
+          <ul class="contact__list">
+            <li><span>📍</span><div><b>Kilińskiego 3</b><br>05-320 Mrozy</div></li>
+            <li><span>📞</span><div><a href="tel:+48739506184"><b>+48 739 506 184</b></a><br>zamówienia telefoniczne</div></li>
+            <li><span>🥡</span><div><b>Na miejscu i na wynos</b></div></li>
+          </ul>
+          <div class="contact__btns">
+            <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&destination=52.1650062,21.802499" target="_blank" rel="noopener">🧭 Wyznacz trasę</a>
+            <a class="btn btn--ghost" href="tel:+48739506184">📞 Zadzwoń</a>
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe title="Mapa – Kebab Nasz, Kilińskiego 3, Mrozy" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=52.1650062,21.802499&z=17&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo.svg" alt="Kebab Nasz" width="56" height="56">
+        <div><b>Kebab Nasz</b><br>Kilińskiego 3, 05-320 Mrozy</div>
+      </div>
+      <div>Codziennie 10:00–23:30<br><a href="tel:+48739506184">+48 739 506 184</a></div>
+      <p class="footer__copy">© <span id="year"></span> Kebab Nasz · Mrozy</p>
+    </div>
+  </footer>
+
+  <!-- Stały przycisk na telefonie -->
+  <a class="fab" href="tel:+48739506184" aria-label="Zadzwoń i zamów: 739 506 184">📞 Zadzwoń i zamów</a>
+
+  <!-- Podgląd ulotki -->
+  <dialog class="lightbox" id="flyerDialog" aria-label="Ulotka z menu">
+    <button class="lightbox__close" id="flyerClose" aria-label="Zamknij">✕</button>
+    <img src="images/menu-ulotka.webp" alt="Ulotka z menu Kebab Nasz z cenami" loading="lazy">
+  </dialog>
+
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
