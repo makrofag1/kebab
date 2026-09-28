@@ -252,6 +252,9 @@ p { margin: 0 0 1em; }
 .cat--wide { grid-column: span 2; }
 .cat--wide .cat__body { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
 
+.menu__grid.menu__error { display: block; text-align: center; padding: 40px 16px; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
+.menu__error a { color: var(--yellow); font-weight: 700; }
+
 .menu__footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
 
 /* ===== O nas ===== */
@@ -314,13 +317,3 @@ p { margin: 0 0 1em; }
 }
 .fab.is-visible { transform: none; }
 @media (max-width: 860px) { .fab { display: flex; } }
-
-/* ===== Ulotka (lightbox) ===== */
-.lightbox { padding: 0; border: 0; background: transparent; max-width: min(720px, 94vw); max-height: 94vh; overflow: visible; }
-.lightbox::backdrop { background: rgba(0,0,0,.85); }
-.lightbox img { max-height: 90vh; width: auto; margin: auto; border-radius: 12px; box-shadow: var(--shadow); }
-.lightbox__close {
-  position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%;
-  border: 0; background: var(--yellow); color: #111; font-size: 1.1rem; font-weight: 800; cursor: pointer;
-}
-@media (max-width: 640px) { .lightbox__close { top: 8px; right: 8px; } }

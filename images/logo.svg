@@ -1,19 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo Kebab Nasz">
   <defs>
-    <path id="arcTop" d="M 38 100 A 62 62 0 0 1 162 100"/>
-    <path id="arcBottom" d="M 30 100 A 70 70 0 0 0 170 100"/>
+    <path id="arcTop" d="M 36 100 A 64 64 0 0 1 164 100"/>
+    <path id="arcBottom" d="M 16 100 A 84 84 0 0 0 184 100"/>
   </defs>
-  <circle cx="100" cy="100" r="96" fill="#111"/>
-  <circle cx="100" cy="100" r="90" fill="none" stroke="#F5C518" stroke-width="5"/>
-  <circle cx="100" cy="100" r="80" fill="none" stroke="#F5C518" stroke-width="1.5" opacity=".6"/>
-  <text font-family="Bebas Neue, Oswald, Impact, sans-serif" font-size="30" fill="#F5C518" letter-spacing="6" text-anchor="middle">
-    <textPath href="#arcTop" startOffset="50%">KEBAB</textPath>
-  </text>
-  <text font-family="Bebas Neue, Oswald, Impact, sans-serif" font-size="30" fill="#F5C518" letter-spacing="6" text-anchor="middle" dominant-baseline="hanging">
-    <textPath href="#arcBottom" startOffset="50%">NASZ</textPath>
-  </text>
-  <path d="M68 78 L132 78 L132 112 Q132 130 100 140 Q68 130 68 112 Z" fill="#D7261E" stroke="#F5C518" stroke-width="3"/>
-  <text x="100" y="118" font-family="Bebas Neue, Oswald, Impact, sans-serif" font-size="40" font-weight="700" fill="#F5C518" text-anchor="middle">KN</text>
-  <circle cx="44" cy="100" r="3" fill="#F5C518"/>
-  <circle cx="156" cy="100" r="3" fill="#F5C518"/>
+  <circle cx="100" cy="100" r="99" fill="#121212"/>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#F5C518" stroke-width="3.5"/>
+  <circle cx="100" cy="100" r="47" fill="none" stroke="#F5C518" stroke-width="1.5"/>
+
+  <g font-family="'Arial Black', 'Segoe UI Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" fill="#FFFFFF" text-anchor="middle">
+    <text font-size="27" letter-spacing="5"><textPath href="#arcTop" startOffset="50%">KEBAB</textPath></text>
+    <text font-size="27" letter-spacing="5"><textPath href="#arcBottom" startOffset="50%">NASZ</textPath></text>
+    <text x="31" y="99" font-size="8.5" letter-spacing="1.6">NEW</text>
+    <text x="169" y="99" font-size="8.5" letter-spacing="1.6">TEST</text>
+  </g>
+  <circle cx="22.6" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="26.8" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="31.0" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="35.2" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="39.4" cy="105.5" r="1.25" fill="#FFFFFF"/>
+  <circle cx="160.6" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="164.8" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="169.0" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="173.2" cy="105.5" r="1.25" fill="#FFFFFF"/><circle cx="177.4" cy="105.5" r="1.25" fill="#FFFFFF"/>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M72 78 V110 M92 78 L75 95 M80.5 89.5 L93 110 M104 110 V78 L126 110 V78" stroke="#F4B343" stroke-width="13"/>
+    <path d="M72 78 V110 M92 78 L75 95 M80.5 89.5 L93 110 M104 110 V78 L126 110 V78" stroke="#D7261E" stroke-width="8.5"/>
+  </g>
+
+  <g>
+    <path d="M 96.17 143.83 A 44 44 0 0 1 58.15 113.60" fill="none" stroke="#F5C518" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse cx="88.90" cy="145.16" rx="5.48" ry="2.08" transform="rotate(152.0 88.90 145.16)" fill="#F5C518"/>
+    <ellipse cx="89.73" cy="140.43" rx="5.48" ry="2.08" transform="rotate(228.0 89.73 140.43)" fill="#F5C518"/>
+    <ellipse cx="82.44" cy="143.06" rx="5.28" ry="2.01" transform="rotate(160.4 82.44 143.06)" fill="#F5C518"/>
+    <ellipse cx="83.95" cy="138.50" rx="5.28" ry="2.01" transform="rotate(236.4 83.95 138.50)" fill="#F5C518"/>
+    <ellipse cx="76.35" cy="140.04" rx="5.08" ry="1.93" transform="rotate(168.8 76.35 140.04)" fill="#F5C518"/>
+    <ellipse cx="78.52" cy="135.75" rx="5.08" ry="1.93" transform="rotate(244.8 78.52 135.75)" fill="#F5C518"/>
+    <ellipse cx="70.77" cy="136.17" rx="4.88" ry="1.85" transform="rotate(177.2 70.77 136.17)" fill="#F5C518"/>
+    <ellipse cx="73.54" cy="132.24" rx="4.88" ry="1.85" transform="rotate(253.2 73.54 132.24)" fill="#F5C518"/>
+    <ellipse cx="65.82" cy="131.53" rx="4.68" ry="1.78" transform="rotate(185.5 65.82 131.53)" fill="#F5C518"/>
+    <ellipse cx="69.12" cy="128.05" rx="4.68" ry="1.78" transform="rotate(261.5 69.12 128.05)" fill="#F5C518"/>
+    <ellipse cx="61.59" cy="126.21" rx="4.48" ry="1.70" transform="rotate(193.9 61.59 126.21)" fill="#F5C518"/>
+    <ellipse cx="65.37" cy="123.25" rx="4.48" ry="1.70" transform="rotate(269.9 65.37 123.25)" fill="#F5C518"/>
+    <ellipse cx="58.18" cy="120.34" rx="4.28" ry="1.63" transform="rotate(202.3 58.18 120.34)" fill="#F5C518"/>
+    <ellipse cx="62.35" cy="117.96" rx="4.28" ry="1.63" transform="rotate(278.3 62.35 117.96)" fill="#F5C518"/>
+    <ellipse cx="55.66" cy="114.03" rx="4.08" ry="1.55" transform="rotate(210.7 55.66 114.03)" fill="#F5C518"/>
+    <ellipse cx="60.14" cy="112.28" rx="4.08" ry="1.55" transform="rotate(286.6 60.14 112.28)" fill="#F5C518"/>
+    <ellipse cx="57.10" cy="110.36" rx="4.2" ry="1.6" transform="rotate(252.0 57.10 110.36)" fill="#F5C518"/>
+    <path d="M 103.83 143.83 A 44 44 0 0 0 141.85 113.60" fill="none" stroke="#F5C518" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse cx="110.27" cy="140.43" rx="5.48" ry="2.08" transform="rotate(-48.0 110.27 140.43)" fill="#F5C518"/>
+    <ellipse cx="111.10" cy="145.16" rx="5.48" ry="2.08" transform="rotate(28.0 111.10 145.16)" fill="#F5C518"/>
+    <ellipse cx="116.05" cy="138.50" rx="5.28" ry="2.01" transform="rotate(-56.4 116.05 138.50)" fill="#F5C518"/>
+    <ellipse cx="117.56" cy="143.06" rx="5.28" ry="2.01" transform="rotate(19.6 117.56 143.06)" fill="#F5C518"/>
+    <ellipse cx="121.48" cy="135.75" rx="5.08" ry="1.93" transform="rotate(-64.8 121.48 135.75)" fill="#F5C518"/>
+    <ellipse cx="123.65" cy="140.04" rx="5.08" ry="1.93" transform="rotate(11.2 123.65 140.04)" fill="#F5C518"/>
+    <ellipse cx="126.46" cy="132.24" rx="4.88" ry="1.85" transform="rotate(-73.2 126.46 132.24)" fill="#F5C518"/>
+    <ellipse cx="129.23" cy="136.17" rx="4.88" ry="1.85" transform="rotate(2.8 129.23 136.17)" fill="#F5C518"/>
+    <ellipse cx="130.88" cy="128.05" rx="4.68" ry="1.78" transform="rotate(-81.5 130.88 128.05)" fill="#F5C518"/>
+    <ellipse cx="134.18" cy="131.53" rx="4.68" ry="1.78" transform="rotate(-5.5 134.18 131.53)" fill="#F5C518"/>
+    <ellipse cx="134.63" cy="123.25" rx="4.48" ry="1.70" transform="rotate(-89.9 134.63 123.25)" fill="#F5C518"/>
+    <ellipse cx="138.41" cy="126.21" rx="4.48" ry="1.70" transform="rotate(-13.9 138.41 126.21)" fill="#F5C518"/>
+    <ellipse cx="137.65" cy="117.96" rx="4.28" ry="1.63" transform="rotate(-98.3 137.65 117.96)" fill="#F5C518"/>
+    <ellipse cx="141.82" cy="120.34" rx="4.28" ry="1.63" transform="rotate(-22.3 141.82 120.34)" fill="#F5C518"/>
+    <ellipse cx="139.86" cy="112.28" rx="4.08" ry="1.55" transform="rotate(-106.7 139.86 112.28)" fill="#F5C518"/>
+    <ellipse cx="144.34" cy="114.03" rx="4.08" ry="1.55" transform="rotate(-30.7 144.34 114.03)" fill="#F5C518"/>
+    <ellipse cx="142.90" cy="110.36" rx="4.2" ry="1.6" transform="rotate(-72.0 142.90 110.36)" fill="#F5C518"/>
+  </g>
 </svg>

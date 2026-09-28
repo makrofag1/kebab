@@ -11,7 +11,6 @@
   <meta property="og:type" content="restaurant">
   <meta property="og:title" content="Kebab Nasz – Mrozy">
   <meta property="og:description" content="Kebab, rollo, kapsalon i kebab box w Mrozach. Codziennie 10:00–23:30. Tel. 739 506 184.">
-  <meta property="og:image" content="images/menu-ulotka.webp">
   <meta property="og:locale" content="pl_PL">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +23,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Kebab Nasz",
-    "image": "images/menu-ulotka.webp",
+    "logo": "images/logo.svg",
     "telephone": "+48 739 506 184",
     "servesCuisine": ["Kebab", "Turecka", "Fast food"],
     "priceRange": "15–45 zł",
@@ -83,8 +82,8 @@
             <a class="btn btn--ghost btn--lg" href="#menu">Zobacz menu</a>
           </div>
           <ul class="hero__facts">
-            <li><strong>10–23:30</strong><span>codziennie</span></li>
-            <li><strong>od 15 zł</strong><span>za kebab</span></li>
+            <li><strong>10:00–23:30</strong><span>codziennie</span></li>
+            <li><strong id="minPrice">od 15 zł</strong><span>za kebab</span></li>
           </ul>
         </div>
         <div class="hero__visual" aria-hidden="true">
@@ -112,7 +111,6 @@
         <div class="menu__grid" id="menuGrid"></div>
 
         <div class="menu__footer">
-          <button class="btn btn--ghost" id="flyerBtn" type="button">📄 Zobacz ulotkę z menu</button>
           <a class="btn btn--primary" href="tel:+48739506184">📞 Zamów: 739 506 184</a>
           <a class="btn btn--ghost" id="orderOnline" href="#" target="_blank" rel="noopener" hidden>🛵 Zamów online</a>
         </div>
@@ -184,13 +182,8 @@
   <!-- Stały przycisk na telefonie -->
   <a class="fab" href="tel:+48739506184" aria-label="Zadzwoń i zamów: 739 506 184">📞 Zadzwoń i zamów</a>
 
-  <!-- Podgląd ulotki -->
-  <dialog class="lightbox" id="flyerDialog" aria-label="Ulotka z menu">
-    <button class="lightbox__close" id="flyerClose" aria-label="Zamknij">✕</button>
-    <img src="images/menu-ulotka.webp" alt="Ulotka z menu Kebab Nasz z cenami" loading="lazy">
-  </dialog>
-
-  <script src="js/menu.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cennik.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

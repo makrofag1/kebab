@@ -1,0 +1,21 @@
+﻿sekcja;nazwa;sklad;maly;sredni;duzy;cena;oznaczenie
+pita;Rollo kurczak / wołowina;mięso, surówka, sos;15,00;20,00;25,00;;
+pita;Rollo z serem;mięso, ser, surówka, sos;17,00;22,00;27,00;;
+pita;Rollo samo mięso;mięso, sos;;23,00;30,00;;
+pita;Rollo z frytkami;mięso, surówka, sos, frytki;;23,00;30,00;;
+pita;Gigantic Mega;podwójne mięso, ser, surówka, sos;;;;30,00;Hit
+pita;Dürüm XXL (50 cm);mięso, sos, ser, frytki;;;;39,00;XXL
+pita;Rollo Strips;strips, surówka, sos;;20,00;28,00;;
+pita;Rollo Nuggets;nuggets, surówka, sos;;20,00;28,00;;
+pita;Rollo Halloumi z mięsem;ser halloumi, mięso, surówka, sos;;;;25,00;
+tortilla;Tortilla;mięso, surówka, sos;15,00;20,00;23,00;;
+tortilla;Tortilla z serem;mięso, ser, surówka, sos;17,00;22,00;25,00;;
+bulka;Kebab bułka;mięso, surówka, sos;;;25,00;;
+bulka;Bułka z frytkami;mięso, surówka, sos, frytki;;;27,00;;
+bulka;Bułka samo mięso;mięso, sos;;;32,00;;
+box;Kebab Box;mięso, surówka, sos, frytki;;20,00;27,00;;
+box;Kebab Box z serem;mięso, surówka, sos, frytki, ser;;22,00;29,00;;
+box;Box samo mięso;mięso, sos, frytki;;25,00;29,00;;
+kapsalon;Kapsalon;mięso, surówka, sos, frytki, ser;23,00;;30,00;;
+talerz;Talerz kurczak / wołowina;mięso, surówka, sos, frytki;28,00;33,00;38,00;;
+talerz;Talerz samo mięso;mięso, sos;;36,00;45,00;;

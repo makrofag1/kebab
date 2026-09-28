@@ -1,8 +1,6 @@
 (function () {
   "use strict";
 
-  const SIZE_LABELS = { s: "Mały", m: "Średni", l: "Duży" };
-  const SIZE_ORDER = ["s", "m", "l"];
   const DAY_NAMES = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
   const WEEK_ORDER = [1, 2, 3, 4, 5, 6, 0]; // od poniedziałku
 
@@ -13,15 +11,21 @@
     if (html != null) node.innerHTML = html;
     return node;
   };
+  // Dla treści z plików CSV — wstawiana jako tekst, nie HTML
+  const txt = (tag, cls, text) => {
+    const node = el(tag, cls);
+    node.textContent = text;
+    return node;
+  };
   const fmt = (n) => n.toFixed(2).replace(".", ",");
 
   /* ---------- Menu ---------- */
   // Cena jako „pigułka” z podpisem rozmiaru nad kwotą (bez podpisu, gdy pozycja ma jedną cenę)
-  function priceTag(value, size) {
+  function priceTag({ size, value }) {
     const tag = el("span", "price");
-    if (size) tag.appendChild(el("small", "price__size", SIZE_LABELS[size]));
-    tag.appendChild(el("b", "price__value", fmt(value)));
-    tag.setAttribute("aria-label", `${size ? SIZE_LABELS[size] + ": " : ""}${fmt(value)} zł`);
+    if (size) tag.appendChild(txt("small", "price__size", size));
+    tag.appendChild(txt("b", "price__value", fmt(value)));
+    tag.setAttribute("aria-label", `${size ? size + ": " : ""}${fmt(value)} zł`);
     return tag;
   }
 
@@ -31,7 +35,14 @@
     card.dataset.cat = cat.id;
 
     const head = el("div", "cat__head");
-    head.appendChild(el("h3", "cat__title", `<span class="cat__icon" aria-hidden="true">${cat.icon}</span>${cat.name}`));
+    const title = el("h3", "cat__title");
+    if (cat.icon) {
+      const icon = txt("span", "cat__icon", cat.icon);
+      icon.setAttribute("aria-hidden", "true");
+      title.appendChild(icon);
+    }
+    title.appendChild(document.createTextNode(cat.name));
+    head.appendChild(title);
     card.appendChild(head);
 
     const body = el("div", "cat__body");
@@ -40,17 +51,14 @@
     cat.items.forEach((item) => {
       const row = el("div", "item");
       const info = el("div", "item__info");
-      const tag = item.tag ? ` <span class="item__tag">${item.tag}</span>` : "";
-      info.appendChild(el("div", "item__name", item.name + tag));
-      info.appendChild(el("p", "item__desc", item.desc));
+      const name = txt("div", "item__name", item.name);
+      if (item.tag) name.appendChild(txt("span", "item__tag", item.tag));
+      info.appendChild(name);
+      if (item.desc) info.appendChild(txt("p", "item__desc", item.desc));
       row.appendChild(info);
 
       const prices = el("div", "item__prices");
-      if (item.prices.one != null) {
-        prices.appendChild(priceTag(item.prices.one));
-      } else {
-        SIZE_ORDER.filter((s) => item.prices[s] != null).forEach((s) => prices.appendChild(priceTag(item.prices[s], s)));
-      }
+      item.prices.forEach((p) => prices.appendChild(priceTag(p)));
       row.appendChild(prices);
       body.appendChild(row);
     });
@@ -131,16 +139,20 @@
     layoutMenu();
   }
 
-  function renderMenu() {
+  function renderMenu(menu) {
     const grid = $("#menuGrid");
     const tabs = $("#menuTabs");
-    if (!grid || typeof MENU === "undefined") return;
+    if (!grid) return;
 
-    MENU.forEach((cat) => grid.appendChild(renderCategory(cat)));
+    menu.forEach((cat) => grid.appendChild(renderCategory(cat)));
 
-    const tabDefs = [{ id: "all", name: "Wszystko", icon: "⭐" }].concat(MENU);
+    // „od X zł” w nagłówku strony liczone z cennika
+    const min = Math.min(...menu.flatMap((c) => c.items.flatMap((i) => i.prices.map((p) => p.value))));
+    if (Number.isFinite(min) && $("#minPrice")) $("#minPrice").textContent = `od ${Math.round(min)} zł`;
+
+    const tabDefs = [{ id: "all", name: "Wszystko", icon: "⭐" }].concat(menu);
     tabDefs.forEach((t, i) => {
-      const btn = el("button", "tab", `${t.icon} ${t.name}`);
+      const btn = txt("button", "tab", `${t.icon} ${t.name}`.trim());
       btn.type = "button";
       btn.setAttribute("role", "tab");
       btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
@@ -253,20 +265,6 @@
     }).observe(hero);
   }
 
-  /* ---------- Ulotka ---------- */
-  function initFlyer() {
-    const dlg = $("#flyerDialog");
-    const btn = $("#flyerBtn");
-    if (!dlg || !btn) return;
-    if (typeof dlg.showModal !== "function") {
-      btn.addEventListener("click", () => window.open("images/menu-ulotka.webp", "_blank"));
-      return;
-    }
-    btn.addEventListener("click", () => dlg.showModal());
-    $("#flyerClose").addEventListener("click", () => dlg.close());
-    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
-  }
-
   /* ---------- Zamówienia online (opcjonalnie) ---------- */
   function initOrderLink() {
     const a = $("#orderOnline");
@@ -274,13 +272,22 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    renderMenu();
-    initMenuLayout();
+    Cennik.load()
+      .then((menu) => {
+        if (!menu.length) throw new Error("cennik jest pusty");
+        renderMenu(menu);
+        initMenuLayout();
+      })
+      .catch((err) => {
+        console.error("[cennik] Nie udało się wczytać cennika:", err);
+        const grid = $("#menuGrid");
+        grid.classList.add("menu__error");
+        grid.innerHTML = `<p>Nie udało się wczytać cennika.<br>Zadzwoń, chętnie podamy ceny: <a href="tel:${SITE_CONFIG.phone}">${SITE_CONFIG.phoneDisplay}</a></p>`;
+      });
     renderStatus();
     renderHours();
     initNav();
     initFab();
-    initFlyer();
     initOrderLink();
     $("#year").textContent = new Date().getFullYear();
     setInterval(renderStatus, 60 * 1000);
