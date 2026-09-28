@@ -146,9 +146,12 @@
 
     menu.forEach((cat) => grid.appendChild(renderCategory(cat)));
 
-    // „od X zł” w nagłówku strony liczone z cennika
+    // „od X zł” w nagłówku strony — najniższa cena z cennika (pełne złote bez groszy, np. „od 15 zł”, „od 14,50 zł”)
     const min = Math.min(...menu.flatMap((c) => c.items.flatMap((i) => i.prices.map((p) => p.value))));
-    if (Number.isFinite(min) && $("#minPrice")) $("#minPrice").textContent = `od ${Math.round(min)} zł`;
+    if (Number.isFinite(min) && $("#minPriceFact")) {
+      $("#minPrice").textContent = `od ${Number.isInteger(min) ? min : fmt(min)} zł`;
+      $("#minPriceFact").hidden = false;
+    }
 
     const tabDefs = [{ id: "all", name: "Wszystko", icon: "⭐" }].concat(menu);
     tabDefs.forEach((t, i) => {
